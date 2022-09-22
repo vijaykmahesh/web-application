@@ -14,7 +14,10 @@ public class UserMapping {
 
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 
-		mapperFactory.classMap(User.class, UserDTO.class).byDefault().register();
+		mapperFactory.classMap(User.class, UserDTO.class)
+		.field("image.imagePath", "imagePath")
+		.field("image.imageName", "imageName")
+		.byDefault().register();
 		MapperFacade mapper = mapperFactory.getMapperFacade();
 		UserDTO dto = mapper.map(user, UserDTO.class);
 		return dto;

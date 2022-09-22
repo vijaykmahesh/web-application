@@ -1,6 +1,11 @@
 export interface UserDTO {
-  userId: number;
-  userName: string;
-  email: string;
+  firstName: string;
+  lastName: string;
+  emailId: string;
   password: string;
+  cityName: string;
+  gender: string;
+  phoneNumber: string;
+  dob: Date;
+  imagePath: string;
 }

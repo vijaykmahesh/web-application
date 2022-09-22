@@ -7,6 +7,10 @@ import { HeaderComponent } from './user/components/header/header.component';
 import { FooterComponent } from './user/components/footer/footer.component';
 import { HomeComponent } from './user/components/home/home.component';
 import { ContactComponent } from './user/components/contact/contact.component';
+import { ProfileComponent } from './user/components/profile/profile.component';
+import { ChangePasswordComponent } from './user/components/change-password/change-password.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,14 @@ import { ContactComponent } from './user/components/contact/contact.component';
     FooterComponent,
     HomeComponent,
     ContactComponent,
+    ProfileComponent,
+    ChangePasswordComponent,
   ],
-  imports: [CommonModule, UserRoutingModule],
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+  ],
 })
 export class UserModule {}

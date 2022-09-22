@@ -13,6 +13,18 @@ export class AuthserviceService {
     localStorage.setItem('token', token);
   }
 
+  public setUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  public getUser(): any {
+    const user = localStorage.getItem('user');
+    if (user) {
+      return JSON.parse(user);
+    }
+    return {};
+  }
+
   getToken(): string | null {
     return localStorage.getItem('token');
   }

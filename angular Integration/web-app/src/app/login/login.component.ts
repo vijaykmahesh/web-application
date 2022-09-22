@@ -22,15 +22,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log(this.loginForm.value.email, this.loginForm.value.password);
-
     if (this.loginForm.valid) {
       this.authSer
         .login(this.loginForm.value.email!, this.loginForm.value.password!)
         .subscribe(
           (result: UserDTO) => {
-            alert(result.password);
             this.authSer.setToken(result.password);
+            this.authSer.setUser(JSON.stringify(result));
             this.router.navigate(['user']);
           },
           (err: Error) => {

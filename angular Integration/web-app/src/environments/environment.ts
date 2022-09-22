@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8080/services/user/',
+  byDefaultImage:
+    'https://cdn-icons-png.flaticon.com/512/1053/1053244.png?w=360',
 };
 
 /*
